@@ -1,0 +1,196 @@
+/*SLIDER*/
+.slider {
+    /*Mida del slider*/
+    width: 90%;
+    /*Marge del slider, en aquest cas no ni ha*/
+    margin: none;
+    /*Fa que no es vegi el principi-final de les imatges*/
+    overflow:hidden;  
+    /*Que estigui situat al costat dret de la pàgina */
+    float: right;  
+}
+
+/*Afecta als paràmetres ul de dins del slider, nomenats al html*/
+.slider ul {
+    /*Fa que surtin totes en horitzontal*/
+    display: flex;
+    padding: 0;
+    width: 600%;
+    /*Cada quant es canvien les imatges i com*/
+    animation: cambio 20s infinite alternate;
+}
+
+/*Afecta als paràmetres li de dins del slider, nomenats al html*/
+.slider li {
+    width: 100%;
+    /*Que no surtin en format llista*/
+    list-style: none;
+}
+
+/*Afecta a les imatges de dins del slider, nomenats al html*/
+.slider img {
+    /*Fa que la imatge ocupi tot el slider*/
+    width: 100%;
+}
+
+/*Diem de quin segon a quin segon surtirà la fotografia i quin temps tindrà per la transmisió*/
+@keyframes cambio {
+    0% { margin-left: 0;}
+    13% { margin-left: 0;}
+
+    19% { margin-left: -100%;}
+    29% { margin-left: -100%;}
+
+    36% { margin-left: -200%;}
+    46% { margin-left: -200%;}
+
+    53% { margin-left: -300%;}
+    63% { margin-left: -300%;}    
+
+    69% { margin-left: -400%;}
+    80% { margin-left: -400%;}   
+    
+    88% { margin-left: -500%;}
+    100% { margin-left: -500%;}
+
+}
+
+
+/*MENÚ*/
+/*Son termes generals*/
+*{
+    /*Et diu com serà l'altura i l'amplada dels elements*/
+    box-sizing: border-box;
+    /*No hi haurà cap marge*/
+    margin: 0;
+    /*No tindrà cap distancia en cap dels costats*/
+    padding: 0;
+}
+
+/*Afecta a l'etiqueta li*/
+li{
+    /*Especifica l'apariencia*/
+    list-style-type: none;
+    /*Quina posició té l'etiqueta li, en aquest cas no es fixa*/
+    position: relative;
+    /*Quina mida té*/
+    width: 150px;
+}
+
+/*Afecta a l'etiqueta a que està dins de l'etiqueta li*/
+li a{
+    /*Que les paraules no tinguin cap decoració, es a dir, per exemple, que no estigui subrallada*/
+    text-decoration: none;
+    /*Es tractat com bloc però et deix modificar la seva alçada i amplada*/
+    display: inline-block;
+    /*Té una distancia de 5px a dalt i a baix i una altre de 10px de distancia als costats*/
+    padding: 5px 10px;
+    /*Quina amplada té*/
+    width: 215px;
+    /*Quina alçada té*/
+    height: 75px;
+    /*Quin borde té, es a dir, la mida i el color*/
+    border: 1px solid #000;
+    /*Color de les lletres*/
+    color: #fff;
+    /*Quin color te de fons*/
+    background-color: #000;
+    /*Quina tipografia té la lletra*/
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*Quina mida té la lletra*/
+    font-size: 25px;
+    /*La lletra està centrada al mitg*/
+    text-align: center;
+}
+
+/*Afecta a l'etiqueta a que està dins de l'etiqueta li quan es passa el ratolí per damunt*/
+li a:hover{
+    /*Color de la lletra al passar el ratolí pel damunt*/
+    color: #000;
+    /*Color del fons de la lletra al passar el ratolí per damunt*/
+    background-color: #fff;
+}
+
+nav li ul{
+    /*Es per amagar elements*/
+    display: none;
+    /*Fa que el slider estigui fixat en un lloc*/
+    position: absolute;
+    /*Dona part de la posicó, en aquest cas diu que la posició donada sigui 0*/
+    top: 0px;
+    /*Està col·locat al costat esquerra a 215px*/
+    left:215px;
+    /*Està centrat al mitg*/
+    text-align:center;
+}
+
+nav li:hover ul {display: block;}
+
+/*Afecta a l'etiqueta h1, que es tracta de l'encapçalat 1*/
+h1{
+    /*Quina tipografia tindrà la lletra*/
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    /*El text estarà centrat*/
+    text-align: center;
+    /*El color de la lletra serà blanca*/
+    color: #fff;
+    /*El fondo de la lletra serà negre*/
+    background: #000;
+}
+
+
+/*EFECTES*/
+/*Afecta a la imatge de l'etiqueta Drop, anomenada amb la funció classe*/
+.Drop{
+    /*La mida de la imatge es la mitat de la pantalla*/
+    width: 50%;  
+    /*La imatge es comporta com a flexible*/ 
+    display: flex;
+    /*La imatge tindrà un marge de 10 px a dalt, a baix i als costats*/
+    padding: 10px 10px;
+    /*Ho transforma tot*/
+    transform: all 0.5 ease;
+    /*La imatge estrà cituada al costat esquerra*/
+    float: left;
+    /*La imatge estarà centrada*/
+    align-items: center;
+}
+
+/*Afecta a la imatge de l'etiqueta Drop, anomenada amb la funció classe, quan es passa el ratolí per damunt*/
+.Drop:hover{
+    /*Fa la imatge més petita*/
+    transform: scale(0.9);
+    /*Li dona una opacitat a la imatge*/
+    filter: opacity(0.5);
+    /*Arrodoneix les puntes*/
+    border-radius: 30px;
+    /*Efecte de sombra amb un marge*/
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+
+/*Afecta a la imatge de l'etiqueta Church, anomenada amb la funció classe*/
+.Church{
+    /*La mida de la imatge es la mitat de la pantalla*/
+    width: 50%;
+    /*Pantalla flexible*/ 
+    display: block;
+    /*La imatge tindrà un marge de 10 px a dalt, a baix i als costats*/
+    padding: 10px 10px;
+    /*La imatge estrà cituada al costat dret*/
+    float: right;
+}
+
+/*Afecta a la imatge de l'etiqueta Church, anomenada amb la funció classe, quan es passa el ratolí per damunt*/
+.Church:hover{
+/*Li dona una opacitat a la imatge*/
+filter: opacity(0.5);
+/*Arrodoneix les puntes*/
+border-radius: 30px; 
+/*Efecte mirall*/
+-webkit-transform: rotateY(180deg);
+-webkit-transform-style: preserve-3d;
+transform: rotateY(180deg);
+transform-style: preserve-3d;
+/*Efecte de sombra amb un marge*/
+box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
